@@ -72,6 +72,40 @@ Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà cont
   }
   ?>
 
+  <p>Snack 2</p>
+
+  <?php
+  // name
+  $name = $_GET['name'];
+  $nameLength = strlen($name);
+
+  // email
+  $email = $_GET['mail'];
+  $emailAt = strpos($email, "@");
+  $emailDot = strpos($email, ".");
+
+  // age
+  $age = $_GET['age'];
+  $isNumeric = is_numeric($age);
+
+  // email logic
+  if($emailAt !== false && $emailDot !== false) {
+    $correctEmail = true;
+  }else{
+    $correctEmail = false;
+  };
+  
+    function getvalues($length, $mail, $years) {
+      if ($length > 3 && $mail == true && $years == true) {
+        echo "Accesso riuscito";
+      } else {
+        echo "Accesso negato";
+      }
+    };
+    
+    getvalues($nameLength, $correctEmail, $isNumeric); 
+  ?>
+
 </body>
 
 </html>
