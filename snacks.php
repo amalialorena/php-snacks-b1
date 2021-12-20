@@ -106,6 +106,67 @@ Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà cont
     getvalues($nameLength, $correctEmail, $isNumeric); 
   ?>
 
+<p> Snack 3</p>
+
+<?php
+    $posts = [
+
+      '10/01/2019' => [
+          [
+              'title' => 'Post 1',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 1'
+          ],
+          [
+              'title' => 'Post 2',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 2'
+          ],
+      ],
+      '10/02/2019' => [
+          [
+              'title' => 'Post 3',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 3'
+          ]
+      ],
+      '15/05/2019' => [
+          [
+              'title' => 'Post 4',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 4'
+          ],
+          [
+              'title' => 'Post 5',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 5'
+          ],
+          [
+              'title' => 'Post 6',
+              'author' => 'Michele Papagni',
+              'text' => 'Testo post 6'
+          ]
+      ],
+  ];
+ 
+  $keys= array_keys($posts);
+  for($i=0; $i<count($posts); $i++) {
+    $key=$keys[$i];
+    $array=$posts[$key];
+    echo "$key" . "<br>";
+    
+    for($j=0; $j<count($array); $j++) {
+        $title=$array[$j]["title"];
+        echo "$title" . "<br>";
+        $author=$array[$j]["author"];
+        echo "$author" . "<br>";
+        $text=$array[$j]["text"];
+        echo "$text" . "<br>";
+        echo"<br>";
+    }
+  }
+
+?>
 </body>
 
 </html>
