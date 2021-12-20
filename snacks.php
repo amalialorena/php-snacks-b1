@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <h1>HELLO</h1>
   <!-- ## Snack 1
 
 Creiamo un array contenente le partite di basket di un'ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
@@ -30,8 +29,48 @@ Qui l'array di esempio: https://www.codepile.net/pile/R2K5d68z
 
 Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà contenere lo stesso numero più di una volta -->
 
+  <!-- ## Snack 1 -->
+  <p>Snack 1</p>
+  <?php
+  $games = [
+    [
+      'homeTeam' => 'Boston Celtics',
+      'guestTeam' => 'New York Knicks',
+      'homePoints' => '50',
+      'guestPoints' => '15',
 
+    ],
 
+    [
+      'homeTeam' => 'Indiana Pacers',
+      'guestTeam' => 'Orlando Magic',
+      'homePoints' => '30',
+      'guestPoints' => '45',
+
+    ],
+
+    [
+      'homeTeam' => 'Washington Wizards',
+      'guestTeam' => 'Memphis Grizzlies',
+      'homePoints' => '55',
+      'guestPoints' => '60',
+
+    ],
+
+    [
+      'homeTeam' => 'Utah Jazz',
+      'guestTeam' => 'Phoenix Suns',
+      'homePoints' => '32',
+      'guestPoints' => '47',
+
+    ],
+  ];
+
+ 
+  for($i=0; $i < 4; $i++) {
+    echo $games[$i]["homeTeam"] . " - " .$games[$i]["guestTeam"] . " | " . $games[$i]["homePoints"] . "-" . $games[$i]["guestPoints"] ."<br>";
+  }
+  ?>
 
 </body>
 
