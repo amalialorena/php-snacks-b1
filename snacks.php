@@ -29,144 +29,229 @@ Qui l'array di esempio: https://www.codepile.net/pile/R2K5d68z
 
 Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà contenere lo stesso numero più di una volta -->
 
-  <!-- ## Snack 1 -->
+  ## Snack 1
   <p>Snack 1</p>
-  <?php
-  $games = [
-    [
-      'homeTeam' => 'Boston Celtics',
-      'guestTeam' => 'New York Knicks',
-      'homePoints' => '50',
-      'guestPoints' => '15',
+  <p>
+    <?php
+    $games = [
+      [
+        'homeTeam' => 'Boston Celtics',
+        'guestTeam' => 'New York Knicks',
+        'homePoints' => '50',
+        'guestPoints' => '15',
 
-    ],
+      ],
 
-    [
-      'homeTeam' => 'Indiana Pacers',
-      'guestTeam' => 'Orlando Magic',
-      'homePoints' => '30',
-      'guestPoints' => '45',
+      [
+        'homeTeam' => 'Indiana Pacers',
+        'guestTeam' => 'Orlando Magic',
+        'homePoints' => '30',
+        'guestPoints' => '45',
 
-    ],
+      ],
 
-    [
-      'homeTeam' => 'Washington Wizards',
-      'guestTeam' => 'Memphis Grizzlies',
-      'homePoints' => '55',
-      'guestPoints' => '60',
+      [
+        'homeTeam' => 'Washington Wizards',
+        'guestTeam' => 'Memphis Grizzlies',
+        'homePoints' => '55',
+        'guestPoints' => '60',
 
-    ],
+      ],
 
-    [
-      'homeTeam' => 'Utah Jazz',
-      'guestTeam' => 'Phoenix Suns',
-      'homePoints' => '32',
-      'guestPoints' => '47',
+      [
+        'homeTeam' => 'Utah Jazz',
+        'guestTeam' => 'Phoenix Suns',
+        'homePoints' => '32',
+        'guestPoints' => '47',
 
-    ],
-  ];
+      ],
+    ];
 
- 
-  for($i=0; $i < 4; $i++) {
-    echo $games[$i]["homeTeam"] . " - " .$games[$i]["guestTeam"] . " | " . $games[$i]["homePoints"] . "-" . $games[$i]["guestPoints"] ."<br>";
-  }
-  ?>
+    for ($i = 0; $i < count($games); $i++) {
+      $game = $games[$i];
+      echo $game["homeTeam"] . " - " . $game["guestTeam"] . " | " . $game["homePoints"] . "-" . $game["guestPoints"] . "<br>";
+    }
+    ?>
+  </p>
+
 
   <p>Snack 2</p>
+  <p>
+    <?php
+    // name
+    $name = $_GET['name'];
+    $nameLength = strlen($name);
 
-  <?php
-  // name
-  $name = $_GET['name'];
-  $nameLength = strlen($name);
+    // email
+    $email = $_GET['mail'];
+    $emailAt = strpos($email, "@");
+    $emailDot = strpos($email, ".");
 
-  // email
-  $email = $_GET['mail'];
-  $emailAt = strpos($email, "@");
-  $emailDot = strpos($email, ".");
+    // age
+    $age = $_GET['age'];
+    $isNumeric = is_numeric($age);
 
-  // age
-  $age = $_GET['age'];
-  $isNumeric = is_numeric($age);
+    // email logic
+    if ($emailAt !== false && $emailDot !== false) {
+      $correctEmail = true;
+    } else {
+      $correctEmail = false;
+    };
 
-  // email logic
-  if($emailAt !== false && $emailDot !== false) {
-    $correctEmail = true;
-  }else{
-    $correctEmail = false;
-  };
-  
-    function getvalues($length, $mail, $years) {
-      if ($length > 3 && $mail == true && $years == true) {
+    function getvalues($length, $mail, $years)
+    {
+      if ($length > 3 && $mail && $years) {
         echo "Accesso riuscito";
       } else {
         echo "Accesso negato";
       }
     };
-    
-    getvalues($nameLength, $correctEmail, $isNumeric); 
-  ?>
+    getvalues($nameLength, $correctEmail, $isNumeric);
+    ?>
+  </p>
 
-<p> Snack 3</p>
 
-<?php
+  <p> Snack 3</p>
+  <p>
+    <?php
     $posts = [
 
       '10/01/2019' => [
-          [
-              'title' => 'Post 1',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 1'
-          ],
-          [
-              'title' => 'Post 2',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 2'
-          ],
+        [
+          'title' => 'Post 1',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 1'
+        ],
+        [
+          'title' => 'Post 2',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 2'
+        ],
       ],
       '10/02/2019' => [
-          [
-              'title' => 'Post 3',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 3'
-          ]
+        [
+          'title' => 'Post 3',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 3'
+        ]
       ],
       '15/05/2019' => [
-          [
-              'title' => 'Post 4',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 4'
-          ],
-          [
-              'title' => 'Post 5',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 5'
-          ],
-          [
-              'title' => 'Post 6',
-              'author' => 'Michele Papagni',
-              'text' => 'Testo post 6'
-          ]
+        [
+          'title' => 'Post 4',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 4'
+        ],
+        [
+          'title' => 'Post 5',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 5'
+        ],
+        [
+          'title' => 'Post 6',
+          'author' => 'Michele Papagni',
+          'text' => 'Testo post 6'
+        ]
       ],
-  ];
- 
-  $keys= array_keys($posts);
-  for($i=0; $i<count($posts); $i++) {
-    $key=$keys[$i];
-    $array=$posts[$key];
-    echo "$key" . "<br>";
-    
-    for($j=0; $j<count($array); $j++) {
-        $title=$array[$j]["title"];
-        echo "$title" . "<br>";
-        $author=$array[$j]["author"];
-        echo "$author" . "<br>";
-        $text=$array[$j]["text"];
-        echo "$text" . "<br>";
-        echo"<br>";
-    }
-  }
+    ];
 
-?>
+    $keys = array_keys($posts);
+    for ($i = 0; $i < count($posts); $i++) {
+      $key = $keys[$i];
+      $array = $posts[$key];
+      echo "$key" . "<br>";
+
+      for ($j = 0; $j < count($array); $j++) {
+        $title = $array[$j]["title"];
+        echo "$title" . "<br>";
+        $author = $array[$j]["author"];
+        echo "$author" . "<br>";
+        $text = $array[$j]["text"];
+        echo "$text" . "<br>";
+        echo "<br>";
+      }
+    }
+    ?>
+
+  </p>
+
+  <p>Snack 4</p>
+  <p>
+    <?php
+    $numbersArray = [];
+
+    while (count($numbersArray) < 15) {
+
+      $num = rand(0, 20);
+      if (!in_array($num, $numbersArray)) {
+        $numbersArray[] = $num;
+      };
+    }
+
+    foreach ($numbersArray as $number) {
+      echo $number . "<br>";
+    }
+
+    ?>
+  </p>
+  <p>Snack 5</p>
+  <p>
+    <?php
+
+    $longString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    $stringsArray = explode(".", $longString);
+
+    for ($i = 0; $i < count($stringsArray); $i++) {
+      $frase = $stringsArray[$i];
+      echo $frase . ".";
+      echo "<br>";
+    }
+
+    // foreach ($stringsArray as $string) {
+    //   echo $string . "." . "<br>";
+    // }
+
+    ?>
+  </p>
+
+  <p>Snack 6</p>
+  <p>
+    <?php
+
+    $db = [
+      'teachers' => [
+        [
+          'name' => 'Michele',
+          'lastname' => 'Papagni'
+        ],
+        [
+          'name' => 'Fabio',
+          'lastname' => 'Forghieri'
+        ]
+      ],
+      'pm' => [
+        [
+          'name' => 'Roberto',
+          'lastname' => 'Marazzini'
+        ],
+        [
+          'name' => 'Federico',
+          'lastname' => 'Pellegrini'
+        ]
+      ]
+    ];
+
+    foreach ($db as $key => $value) {
+      echo "<h1>$key</h1>";
+      foreach ($value as $arr => $teacher) {
+        echo $teacher['name'] . "<br>";
+        echo $teacher['lastname'] . "<br>";
+      }
+    };
+
+
+    ?>
+  </p>
+
 </body>
 
 </html>
